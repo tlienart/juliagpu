@@ -190,6 +190,10 @@ end</code></pre>
 end</code></pre>
 <p>The snippet above illustrates one breaking aspect of this change: Because each task uses its own stream, <strong>you now need to synchronize when re-using data in another task.</strong> Although it is unlikely that any user code was relying on the old behavior, it is technically a breaking change.</p>
 <p>If we profile these computations, we can see how the execution was overlapped:</p>
+<figure>
+  <img src="/juliagpu/post/2021-03-01-cuda_3.0/task_based_concurrency.png" alt="Overlapping execution on the GPU using task-based concurrency">
+</figure>
+
 <p>The region highlighted in green was spent enqueueing operations, which includes the call to <code>synchronize&#40;&#41;</code>. This used to be a globally-synchronizing operation, whereas now it only synchronizes the task-local stream while yielding to the Julia scheduler so that it can continue executing other tasks. <strong>For synchronizing the entire device, use the new <code>synchronize_all&#40;&#41;</code> function.</strong></p>
 <p>The remainder of computation was then spent executing kernels. Here, these executions were overlapping, but that obviously depends on the exact characteristics of the computations and your GPU. The same approach however can be used for multi-GPU programming, where each task targets a different device. It is also possible to use different threads for each task.</p>
 <p>Note that not all operations have been made fully asynchronous yet. For example, copying memory to or from the GPU will currently still synchronize execution, and thus inhibit switching to another task. That is why the example above only called <code>synchronize&#40;&#41;</code> in the compute task, and copied the memory to the host in the parent task.</p>

@@ -225,7 +225,15 @@ for i in 1:num_streams
 
     @cuda kernel&#40;data, 0&#41;
 end</code></pre>
+<figure>
+  <img src="/juliagpu/post/2020-10-02-cuda_2.0/multistream_before.png" alt="Multi-stream programming (old)">
+</figure>
+
 <p>In the new model, default streams are regular streams and commands issued on them can execute concurrently with those on other streams:</p>
+<figure>
+  <img src="/juliagpu/post/2020-10-02-cuda_2.0/multistream_after.png" alt="Multi-stream programming (new)">
+</figure>
+
 <h3 id="multi-threading"><a href="#multi-threading" class="header-anchor">Multi-threading</a></h3>
 <p>Another consequence of the new stream model is that each thread gets its own default stream &#40;accessible as <code>CuStreamPerThread&#40;&#41;</code>&#41;. Together with Julia&#39;s threading capabilities, this makes it trivial to group independent work in tasks, benefiting from concurrent execution on the GPU where possible:</p>
 <pre><code class="language-julia">using CUDA
@@ -245,7 +253,15 @@ Threads.@threads for i in 1:Threads.nthreads&#40;&#41;
     @cuda blocks&#61;1 threads&#61;64 kernel&#40;data, N&#41;
     synchronize&#40;CuDefaultStream&#40;&#41;&#41;
 end</code></pre>
+<figure>
+  <img src="/juliagpu/post/2020-10-02-cuda_2.0/multithread_after.png" alt="Multi-threading (new)">
+</figure>
+
 <p>With the old model, execution would have been serialized because the default stream was the same across threads:</p>
+<figure>
+  <img src="/juliagpu/post/2020-10-02-cuda_2.0/multithread_before.png" alt="Multi-threading (old)">
+</figure>
+
 <p>Future improvements will make this behavior configurable, such that users can use a different default stream per task.</p>
 <h2 id="sparse_array_clean-up"><a href="#sparse_array_clean-up" class="header-anchor">Sparse array clean-up</a></h2>
 <p>As part of CUDA.jl 2.0, the sparse array support <a href="https://github.com/JuliaGPU/CUDA.jl/pull/409">has been refactored</a>, bringing them in line with other array types and their expected behavior. For example, the custom <code>switch2</code> methods have been removed in favor of calls to <code>convert</code> and array constructors:</p>

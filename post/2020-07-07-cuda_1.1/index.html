@@ -213,6 +213,10 @@ julia&gt; @cuda config&#61;configurator warp&#40;outimg_d, texture&#41;</code></
 <pre><code class="language-julia-repl">julia&gt; outimg &#61; Array&#40;outimg_d&#41;
 
 julia&gt; save&#40;&quot;imgwarp.png&quot;, reinterpret&#40;eltype&#40;img&#41;, outimg&#41;&#41;</code></pre>
+<figure>
+  <img src="/juliagpu/post/2020-07-07-cuda_1.1/imgwarp.png" alt="Warped lighthouse">
+</figure>
+
 <h2 id="minor_features"><a href="#minor_features" class="header-anchor">Minor features</a></h2>
 <p>The test-suite is now parallelized, using up-to <code>JULIA_NUM_THREADS</code> processes:</p>
 <pre><code class="language-julia">&#36; JULIA_NUM_THREADS&#61;4 julia -e &#39;using Pkg; Pkg.test&#40;&quot;CUDA&quot;&#41;;&#39;
