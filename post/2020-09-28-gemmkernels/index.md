@@ -21,7 +21,7 @@ in the same ball park as, and sometimes even outperform state-of-the-art librari
 CUBLAS and CUTLASS. For example, performing a mixed-precision multiplication of two 16-bit
 matrixes into a 32-bit accumulator (on different combinations of layouts):
 
-<!-- {{< img "mixed_precision.png" "Performance of mixed-precision GEMM" >}} -->
+{{img "mixed_precision.png" "Performance of mixed-precision GEMM"}}
 
 The APIs are also highly flexible and allow customization of each step, e.g., to apply the
 activation function `max(x, 0)` for implementing a rectified linear unit (ReLU):

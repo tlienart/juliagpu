@@ -125,12 +125,12 @@ for i in 1:num_streams
 end
 ```
 
-<!-- {{< img "multistream_before.png" "Multi-stream programming (old)" >}} -->
+{{img "multistream_before.png" "Multi-stream programming (old)" }}
 
 In the new model, default streams are regular streams and commands issued on them can
 execute concurrently with those on other streams:
 
-<!-- {{< img "multistream_after.png" "Multi-stream programming (new)" >}} -->
+{{ img "multistream_after.png" "Multi-stream programming (new)" }}
 
 
 ### Multi-threading
@@ -160,12 +160,12 @@ Threads.@threads for i in 1:Threads.nthreads()
 end
 ```
 
-<!-- {{< img "multithread_after.png" "Multi-threading (new)" >}} -->
+{{ img "multithread_after.png" "Multi-threading (new)" }}
 
 With the old model, execution would have been serialized because the default stream was the
 same across threads:
 
-<!-- {{< img "multithread_before.png" "Multi-threading (old)" >}} -->
+{{ img "multithread_before.png" "Multi-threading (old)" }}
 
 Future improvements will make this behavior configurable, such that users can use a
 different default stream per task.

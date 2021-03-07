@@ -80,3 +80,14 @@ function hfun_blogposts()
     end
     return String(take!(io))
 end
+
+function hfun_img(params)
+    img = params[1]
+    cap = params[2]
+    path = replace(locvar(:fd_url), "/index.html" => "/")
+    return """
+        <figure>
+          <img src="$(path)$img" alt="$cap">
+        </figure>
+        """
+end

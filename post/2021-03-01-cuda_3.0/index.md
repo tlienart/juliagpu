@@ -81,7 +81,7 @@ change.
 
 If we profile these computations, we can see how the execution was overlapped:
 
-<!-- {{< img "task_based_concurrency.png" "Overlapping execution on the GPU using task-based concurrency" >}} -->
+{{img "task_based_concurrency.png" "Overlapping execution on the GPU using task-based concurrency" }}
 
 The region highlighted in green was spent enqueueing operations, which includes the call to
 `synchronize()`. This used to be a globally-synchronizing operation, whereas now it only

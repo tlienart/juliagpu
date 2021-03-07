@@ -10,4 +10,4 @@
   * [x] redirects 2018
   * [x] redirects 2017
   * [x] allow hidden
-  * look for `{{< ... >}}`
+  * [x] look for `{{< ... >}}`
