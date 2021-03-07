@@ -31,7 +31,7 @@ function hfun_post_date()
     fname = blogpost_name(locvar(:fd_rpath)::String)
     y, m, d = getdate(fname)
     return """
-           <i data-feather=calendar></i>
+           
            <time datetime=$y-$m-$d>$(MONTH[m]) $d, $y</time>
            """
 end
@@ -43,7 +43,7 @@ function blogpost_entry_html(link, title, y, m, d; ext=false)
             $title
           </a>$(ifelse(ext, "<span>&nbsp;&#8599;</span>", ""))
           <br>
-          <i data-feather=calendar></i>
+          
           <time datetime=$y-$m-$d>$(MONTH[m]) $d, $y</time>
         </p>
         """
