@@ -4,7 +4,7 @@ title = "JuliaGPU"
 
 ~~~
 <div id=home-jumbotron class="jumbotron text-center">
-  <h1><img height=70 src=/assets/logo_crop.png>JuliaGPU</h1>
+  <h1><img height=70 src="/assets/logo_crop.png">JuliaGPU</h1>
   <p class=font-125>
     High-performance GPU programming in a high-level language.
   </p>

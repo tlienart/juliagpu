@@ -6,7 +6,7 @@ title = "Intel oneAPI"
 
 ~~~
 <p>
-  <a href=https://github.com/JuliaGPU/oneAPI.jl>
+  <a href="https://github.com/JuliaGPU/oneAPI.jl">
     <img src="https://img.shields.io/github/stars/JuliaGPU/oneAPI.jl?style=social" alt>
   </a>
 </p>

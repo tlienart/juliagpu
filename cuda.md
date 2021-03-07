@@ -6,10 +6,10 @@ title = "NVIDIA CUDA"
 
 ~~~
 <p>
-<a href=https://juliagpu.gitlab.io/CUDA.jl/>
-  <img src=https://img.shields.io/badge/docs-latest-blue.svg alt>
+<a href="https://juliagpu.gitlab.io/CUDA.jl/">
+  <img src="https://img.shields.io/badge/docs-latest-blue.svg" alt>
 </a>
-<a href=https://github.com/JuliaGPU/CUDA.jl>
+<a href="https://github.com/JuliaGPU/CUDA.jl">
   <img src="https://img.shields.io/github/stars/JuliaGPU/CUDA.jl?style=social" alt>
 </a>
 </p>
