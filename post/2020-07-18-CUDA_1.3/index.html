@@ -141,7 +141,6 @@ li p {
 
     
       
-      
       <h1>CUDA.jl 1.3 - Multi-device programming</h1>
       <i data-feather=calendar></i>
 <time datetime=2020-7-18>Jul 18, 2020</time><br>
@@ -153,7 +152,8 @@ Tim Besard
     
 <!-- Content appended here -->
 
-<p>Today we&#39;re releasing CUDA.jl 1.3, with several new features. The most prominent change is support for multiple GPUs within a single process.</p>
+<p><p>Today we&#39;re releasing CUDA.jl 1.3, with several new features. The most prominent change is support for multiple GPUs within a single process.</p>
+</p>
 <h2 id="multi-gpu_programming"><a href="#multi-gpu_programming" class="header-anchor">Multi-GPU programming</a></h2>
 <p>With CUDA.jl 1.3, you can finally use multiple CUDA GPUs within a single process. To switch devices you can call <code>device&#33;</code>, query the current device with <code>device&#40;&#41;</code>, or reset it using <code>device_reset&#33;&#40;&#41;</code>:</p>
 <pre><code class="language-julia-repl">julia&gt; collect&#40;devices&#40;&#41;&#41;

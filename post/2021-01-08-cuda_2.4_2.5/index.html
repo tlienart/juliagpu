@@ -141,7 +141,6 @@ li p {
 
     
       
-      
       <h1>CUDA.jl 2.4 and 2.5</h1>
       <i data-feather=calendar></i>
 <time datetime=2021-1-8>Jan 8, 2021</time><br>
@@ -153,7 +152,8 @@ Tim Besard
     
 <!-- Content appended here -->
 
-<p>CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved <code>findmin</code> and <code>findmax</code> kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.</p>
+<p><p>CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved <code>findmin</code> and <code>findmax</code> kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.</p>
+</p>
 <h2 id="improved_findmin_and_findmax_kernels"><a href="#improved_findmin_and_findmax_kernels" class="header-anchor">Improved <code>findmin</code> and <code>findmax</code> kernels</a></h2>
 <p>Thanks to <a href="https://github.com/tkf">@tkf</a> and <a href="https://github.com/Ellipse0934">@Ellipse0934</a>, CUDA.jl now <a href="https://github.com/JuliaGPU/CUDA.jl/pull/576">uses a single-pass kernel for finding the minimum or maximum item in a CuArray</a>. This fixes compatibility with <code>NaN</code>-valued elements, while on average improving performance. Depending on the rank, shape and size of the array these improvements vary from a minor regression to order-of-magnitude improvements.</p>
 <h2 id="new_kernel_introspection_interface"><a href="#new_kernel_introspection_interface" class="header-anchor">New kernel introspection interface</a></h2>

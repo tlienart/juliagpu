@@ -101,20 +101,24 @@ function hfun_img(params)
         """
 end
 
+function hfun_abstract()
+    hidden = false
+    # hidden = locvar(:hidden)
+    # hidden = !isnothing(hidden) && hidden
+    fname = blogpost_name(locvar(:fd_rpath)::String)
+    y, m, d = getdate(fname)
+    date = Date(y, m, d)
+    abstract = locvar(:abstract)::String
+    descr = fd2html(abstract; internal=true)
+    if !hidden
+        Franklin.set_var!(Franklin.LOCAL_VARS, "rss", abstract)
+        Franklin.set_var!(Franklin.LOCAL_VARS, "rss_pubdate", date)
+        Franklin.add_rss_item()
+    end
+    return "<p>$descr</p>"
+end
+
 function hfun_postredirect()
     path = replace(locvar(:fd_url)::String, "/post/" => "/")
     return Franklin.hfun_redirect([path])
-end
-
-
-function hfun_postrss()
-    !isnothing(locvar(:hidden)) && locvar(:hidden) && return ""
-    fpath = locvar(:fd_rpath)::String
-    fname = blogpost_name(fpath)
-    y, m, d = getdate(fname)
-    date = Date(y, m, d)
-    Franklin.set_var!(Franklin.LOCAL_VARS, "rss", read(fpath, String))
-    Franklin.set_var!(Franklin.LOCAL_VARS, "rss_pubdate", date)
-    Franklin.add_rss_item()
-    return ""
 end
