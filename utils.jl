@@ -106,3 +106,8 @@ function hfun_abstract()
     descr = fd2html(locvar(:abstract)::String, internal=true)
     return "<p>$descr</p>"
 end
+
+function hfun_postredirect()
+    path = replace(locvar(:fd_url)::String, "/post/" => "/")
+    return Franklin.hfun_redirect([path])
+end
