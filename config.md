@@ -9,6 +9,7 @@ ignore = ["node_modules/", "README.md"]
 website_title = "JuliaGPU"
 website_descr = "High-performance GPU programming in a high-level language."
 website_url = "https://juliagpu.org/"
+rss_full_content = true
 
 # Misc
 content_tag = ""
