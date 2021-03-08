@@ -8,7 +8,6 @@ abstract = """
     accelerators from Julia, and present abstractions and interfaces that allow to do so
     efficiently without sacrificing performance.
     """
-rss = abstract
 +++
 
 {{abstract}}

@@ -101,9 +101,15 @@ function hfun_img(params)
         """
 end
 
-
 function hfun_abstract()
-    descr = fd2html(locvar(:abstract)::String, internal=true)
+    fname = blogpost_name(locvar(:fd_rpath)::String)
+    y, m, d = getdate(fname)
+    date = Date(y, m, d)
+    abstract = locvar(:abstract)::String
+    descr = fd2html(abstract, internal=true)
+    Franklin.set_var!(Franklin.LOCAL_VARS, "rss", abstract)
+    Franklin.set_var!(Franklin.LOCAL_VARS, "rss_pubdate", date)
+    Franklin.add_rss_item()
     return "<p>$descr</p>"
 end
 
