@@ -141,6 +141,7 @@ li p {
 
     
       
+      
       <h1>CUDA.jl 1.1</h1>
       <i data-feather=calendar></i>
 <time datetime=2020-7-7>Jul 7, 2020</time><br>
@@ -152,8 +153,7 @@ Tim Besard
     
 <!-- Content appended here -->
 
-<p><p>CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.</p>
-</p>
+<p>CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.</p>
 <h2 id="cudajl_replacing_cuarrayscudanativejl"><a href="#cudajl_replacing_cuarrayscudanativejl" class="header-anchor">CUDA.jl replacing CuArrays/CUDAnative.jl</a></h2>
 <p>As <a href="https://discourse.julialang.org/t/psa-cuda-jl-replacing-cuarrays-jl-cudanative-jl-cudadrv-jl-cudaapi-jl-call-for-testing/40205">announced a while back</a>, CUDA.jl is now the new package for programming CUDA GPUs in Julia, replacing CuArrays.jl, CUDAnative.jl, CUDAdrv.jl and CUDAapi.jl. The merged package should be a drop-in replacement: All existing functionality has been ported, and almost all exported functions are still there. Applications like Flux.jl or the DiffEq.jl stack are being updated to support this change.</p>
 <h2 id="cuda_11_support"><a href="#cuda_11_support" class="header-anchor">CUDA 11 support</a></h2>

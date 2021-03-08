@@ -141,6 +141,7 @@ li p {
 
     
       
+      
       <h1>CUDA.jl 3.0</h1>
       <i data-feather=calendar></i>
 <time datetime=2021-3-1>Mar 1, 2021</time><br>
@@ -152,8 +153,7 @@ Tim Besard
     
 <!-- Content appended here -->
 
-<p><p>CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a completely revamped cuDNN interface.</p>
-</p>
+<p>CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a completely revamped cuDNN interface.</p>
 <h2 id="improved_multi-tasking_and_multi-threading"><a href="#improved_multi-tasking_and_multi-threading" class="header-anchor">Improved multi-tasking and multi-threading</a></h2>
 <p>Traditionally, CUDA operations were enqueued on the global default stream, and many of these operations &#40;like copying memory, or synchronizing execution&#41; were fully blocking. This posed difficulties when using multiple tasks, each of which assumed to perform independent operations &#40;possibly on different devices, maybe even from a different CPU thread&#41;. <strong>CUDA.jl now uses a private stream for each Julia task, and avoids blocking operations where possible, enabling task-based concurrent execution.</strong></p>
 <p>A ~~picture~~ snippet of code is worth a thousand words, so let&#39;s have a look at some dummy computation that both uses a library function &#40;GEMM from CUBLAS&#41; and a native Julia broadcast kernel:</p>
