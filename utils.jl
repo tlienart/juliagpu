@@ -108,6 +108,7 @@ end
 
 
 function hfun_postrss()
+    !isnothing(locvar(:hidden)) && locvar(:hidden) && return ""
     fpath = locvar(:fd_rpath)::String
     fname = blogpost_name(fpath)
     y, m, d = getdate(fname)
