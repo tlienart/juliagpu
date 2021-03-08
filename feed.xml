@@ -3,13 +3,13 @@
   <title><![CDATA[JuliaGPU]]></title>
   <description><![CDATA[High-performance GPU programming in a high-level language.
 ]]></description>
-  <link>https://juliagpu.org/</link>
-  <atom:link href="https://juliagpu.org/feed.xml" rel="self" type="application/rss+xml" />
+  <link>https://tlienart.github.io/juliagpu/</link>
+  <atom:link href="https://tlienart.github.io/juliagpu/feed.xml" rel="self" type="application/rss+xml" />
   <item>
     <title><![CDATA[CUDA.jl 2.4 and 2.5]]></title>
-    <link>https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2021-01-08-cuda_2.4_2.5/</link>
     <description><![CDATA[CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved <code>findmin</code> and <code>findmax</code> kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.
-<br><a href="https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2021-01-08-cuda_2.4_2.5/">Read more</a>]]></description>
     <content:encoded>
 
 <h2 id="improved_findmin_and_findmax_kernels__2"><a href="#improved_findmin_and_findmax_kernels__2" class="header-anchor">Improved <code>findmin</code> and <code>findmax</code> kernels</a></h2>
@@ -39,14 +39,14 @@ NVIDIA driver 460.27.4</code></pre>
 <h2 id="future_developments__2"><a href="#future_developments__2" class="header-anchor">Future developments</a></h2>
 <p>Due to upstream compiler changes, CUDA.jl 2.4 is expected to be the last release compatible with Julia 1.5. Patch releases are still possible, but are not automatic: If you need a specific bugfix from a future CUDA.jl release, create an issue or PR to backport the change.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2021-01-08-cuda_2.4_2.5/</guid>
     <pubDate>Fri, 8 Jan 2021 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[CUDA.jl 2.1]]></title>
-    <link>https://juliagpu.org/post/2020-10-30-cuda_2.1/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2020-10-30-cuda_2.1/</link>
     <description><![CDATA[CUDA.jl v2.1 is a bug-fix release, with one new feature: support for cubic texture interpolations. The release also partly reverts a change from v2.0: <code>reshape</code>, <code>reinterpret</code> and contiguous <code>view</code>s now return a <code>CuArray</code> again.
-<br><a href="https://juliagpu.org/post/2020-10-30-cuda_2.1/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2020-10-30-cuda_2.1/">Read more</a>]]></description>
     <content:encoded>
 
 <h2 id="generalized_texture_interpolations__2"><a href="#generalized_texture_interpolations__2" class="header-anchor">Generalized texture interpolations</a></h2>
@@ -82,14 +82,14 @@ dst &#61; Array&#40;gpu_dst&#41;</code></pre>
 <p>In CUDA.jl v2.0, we changed the behavior of several important array operations to reuse available wrappers in Base: <code>reshape</code> started returning a <code>ReshapedArray</code>, <code>view</code> now returned a <code>SubArray</code>, and <code>reinterpret</code> was reworked to use <code>ReinterpretArray</code>. These changes were made to ensure maximal compatibility with Base&#39;s array type, and to simplify the implementation in CUDA.jl and GPUArrays.jl.</p>
 <p>However, this change turned out to regress the time to precompile and load CUDA.jl. Consequently, the change has been reverted, and these wrappers are now implemented as part of the <code>CuArray</code> type again. Note however that we intend to revisit this change in the future. It is therefore recommended to use the <code>DenseCuArray</code> type alias for methods that need a <code>CuArray</code> backed by contiguous GPU memory. For strided <code>CuArray</code>s, i.e. non-contiguous views, you should use the <code>StridedCuArray</code> alias.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2020-10-30-cuda_2.1/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2020-10-30-cuda_2.1/</guid>
     <pubDate>Fri, 30 Oct 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[CUDA.jl 2.0]]></title>
-    <link>https://juliagpu.org/post/2020-10-02-cuda_2.0/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2020-10-02-cuda_2.0/</link>
     <description><![CDATA[Today we&#39;re releasing CUDA.jl 2.0, a breaking release with several new features. Highlights include initial support for Float16, a switch to CUDA&#39;s new stream model, a much-needed rework of the sparse array support and support for CUDA 11.1.
-<br><a href="https://juliagpu.org/post/2020-10-02-cuda_2.0/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2020-10-02-cuda_2.0/">Read more</a>]]></description>
     <content:encoded>
 
 <p>The release now requires <strong>Julia 1.5</strong>, and assumes a GPU with <strong>compute capability 5.0</strong> or higher &#40;although most of the package will still work with an older GPU&#41;.</p>
@@ -243,14 +243,14 @@ Libraries:
 </li>
 </ul>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2020-10-02-cuda_2.0/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2020-10-02-cuda_2.0/</guid>
     <pubDate>Fri, 2 Oct 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[Paper: Flexible Performant GEMM Kernels on GPUs]]></title>
-    <link>https://juliagpu.org/post/2020-09-28-gemmkernels/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2020-09-28-gemmkernels/</link>
     <description><![CDATA[General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.
-<br><a href="https://juliagpu.org/post/2020-09-28-gemmkernels/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2020-09-28-gemmkernels/">Read more</a>]]></description>
     <content:encoded>
 
 <p>A pre-print of the paper has been published on arXiv: <a href="https://arxiv.org/abs/2009.12263">arXiv:2009.12263</a>. &lt;br&gt; The source code can be found on GitHub: <a href="https://github.com/thomasfaingnaert/GemmKernels.jl">thomasfaingnaert/GemmKernels.jl</a>.</p>
@@ -273,14 +273,14 @@ GemmKernels.matmul&#40;
     transform_regs_to_shared_d &#61; Transform.Elementwise&#40;x -&gt; max&#40;x, 0&#41;&#41;&#41;</code></pre>
 <p>The GemmKernels.jl framework is written entirely in Julia, demonstrating the high-performance GPU programming capabilities of this language, but at the same time keeping the research accessible and easy to modify or repurpose by other Julia developers.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2020-09-28-gemmkernels/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2020-09-28-gemmkernels/</guid>
     <pubDate>Mon, 28 Sep 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[CUDA.jl 1.3 - Multi-device programming]]></title>
-    <link>https://juliagpu.org/post/2020-07-18-CUDA_1.3/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2020-07-18-CUDA_1.3/</link>
     <description><![CDATA[Today we&#39;re releasing CUDA.jl 1.3, with several new features. The most prominent change is support for multiple GPUs within a single process.
-<br><a href="https://juliagpu.org/post/2020-07-18-CUDA_1.3/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2020-07-18-CUDA_1.3/">Read more</a>]]></description>
     <content:encoded>
 
 <h2 id="multi-gpu_programming__2"><a href="#multi-gpu_programming__2" class="header-anchor">Multi-GPU programming</a></h2>
@@ -368,14 +368,14 @@ CuDevice&#40;0&#41;: Tesla V100-PCIE-32GB</code></pre>
 <h2 id="known_issues__2"><a href="#known_issues__2" class="header-anchor">Known issues</a></h2>
 <p>Several operations on sparse arrays have been broken since CUDA.jl 1.2, due to the deprecations that were part of CUDA 11. The next version of CUDA.jl will drop support for CUDA 10.0 or older, which will make it possible to use new cuSPARSE APIs and add back missing functionality.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2020-07-18-CUDA_1.3/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2020-07-18-CUDA_1.3/</guid>
     <pubDate>Sat, 18 Jul 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[CUDA.jl 1.1]]></title>
-    <link>https://juliagpu.org/post/2020-07-07-cuda_1.1/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2020-07-07-cuda_1.1/</link>
     <description><![CDATA[CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.
-<br><a href="https://juliagpu.org/post/2020-07-07-cuda_1.1/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2020-07-07-cuda_1.1/">Read more</a>]]></description>
     <content:encoded>
 
 <h2 id="cudajl_replacing_cuarrayscudanativejl__2"><a href="#cudajl_replacing_cuarrayscudanativejl__2" class="header-anchor">CUDA.jl replacing CuArrays/CUDAnative.jl</a></h2>
@@ -489,14 +489,14 @@ Toolchain:
 <p>CUTENSOR artifacts have been upgraded to version 1.1.0.</p>
 <p>Benchmarking infrastructure based on the Codespeed project has been set-up at <a href="https://speed.juliagpu.org/">speed.juliagpu.org</a> to keep track of the performance of various operations.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2020-07-07-cuda_1.1/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2020-07-07-cuda_1.1/</guid>
     <pubDate>Tue, 7 Jul 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[CUDAnative.jl 3.0 and CuArrays.jl 2.0]]></title>
-    <link>https://juliagpu.org/post/2020-03-25-cudanative_3.0-cuarrays_2.0/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2020-03-25-cudanative_3.0-cuarrays_2.0/</link>
     <description><![CDATA[This release of the Julia CUDA stack contains some exciting new features: automatic installation of CUDA using artifacts, full support for GPU method redefinitions, and experimental support for multitasking and multithreading. The release is technically breaking, but most end-users should not be affected.
-<br><a href="https://juliagpu.org/post/2020-03-25-cudanative_3.0-cuarrays_2.0/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2020-03-25-cudanative_3.0-cuarrays_2.0/">Read more</a>]]></description>
     <content:encoded>
 
 
@@ -554,20 +554,20 @@ end</code></pre>
 <p>With a release as big as this one there&#39;s bound to be some bugs, e.g., with the installation of artifacts on exotic systems, or due to the many changes to make the libraries thread-safe. If you need absolute stability, please wait for a point release.</p>
 <p>There are also some known issues. CUDAnative is currently not compatible with Julia 1.5 due to Base compiler changes &#40;<a href="https://github.com/JuliaLang/julia/issues/34993">julia#34993</a>&#41;, the new <code>mapreducedim&#33;</code> kernel appears to be slower in some cases &#40;<a href="https://github.com/JuliaGPU/CuArrays.jl/issues/611">CuArrays.jl#611</a>&#41;, and there are some remaining thread-safety issues when using the non-default memory pool &#40;<a href="https://github.com/JuliaGPU/CuArrays.jl/issues/647">CuArrays.jl#647</a>&#41;.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2020-03-25-cudanative_3.0-cuarrays_2.0/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2020-03-25-cudanative_3.0-cuarrays_2.0/</guid>
     <pubDate>Wed, 25 Mar 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[New website for JuliaGPU]]></title>
-    <link>https://juliagpu.org/post/2019-12-12-new_site/</link>
+    <link>https://tlienart.github.io/juliagpu/post/2019-12-12-new_site/</link>
     <description><![CDATA[Welcome to the new landing page for the JuliaGPU organization. This website serves as an introduction to the several packages for programming GPUs in Julia, with pointers to relevant resources for new users.
-<br><a href="https://juliagpu.org/post/2019-12-12-new_site/">Read more</a>]]></description>
+<br><a href="https://tlienart.github.io/juliagpu/post/2019-12-12-new_site/">Read more</a>]]></description>
     <content:encoded>
 
 
 <p>The sources for this website are hosted at <a href="https://github.com/JuliaGPU/juliagpu.org">GitHub</a> and generated using Hugo, feel free to open an issue or pull request if you think it could be improved.</p>
 </content:encoded>
-    <guid>https://juliagpu.org/post/2019-12-12-new_site/</guid>
+    <guid>https://tlienart.github.io/juliagpu/post/2019-12-12-new_site/</guid>
     <pubDate>Thu, 12 Dec 2019 00:00:00 UT</pubDate>
   </item>
 </channel>

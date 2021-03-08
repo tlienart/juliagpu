@@ -1,4 +1,4 @@
-Sitemap: https://juliagpu.org/sitemap.xml
+Sitemap: https://tlienart.github.io/juliagpu/sitemap.xml
 
 User-agent: *
 Disallow:
