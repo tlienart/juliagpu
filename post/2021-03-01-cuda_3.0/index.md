@@ -20,7 +20,7 @@ operations (possibly on different devices, maybe even from a different CPU threa
 **CUDA.jl now uses a private stream for each Julia task, and avoids blocking operations
 where possible, enabling task-based concurrent execution.**
 
-A ~~picture~~ snippet of code is worth a thousand words, so let's have a look at some dummy
+A ~~~<s>picture</s>~~~ snippet of code is worth a thousand words, so let's have a look at some dummy
 computation that both uses a library function (GEMM from CUBLAS) and a native Julia
 broadcast kernel:
 

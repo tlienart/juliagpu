@@ -102,9 +102,8 @@ function hfun_img(params)
 end
 
 function hfun_abstract()
-    hidden = false
-    # hidden = locvar(:hidden)
-    # hidden = !isnothing(hidden) && hidden
+    hidden = locvar(:hidden)
+    hidden = !isnothing(hidden) && hidden
     fname = blogpost_name(locvar(:fd_rpath)::String)
     y, m, d = getdate(fname)
     date = Date(y, m, d)
