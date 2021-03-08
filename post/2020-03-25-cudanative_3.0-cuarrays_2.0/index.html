@@ -142,14 +142,18 @@ li p {
     
     <h1>CUDAnative.jl 3.0 and CuArrays.jl 2.0</h1>
     <i data-feather=calendar></i>
-<time datetime=2020-3-25>Mar 25, 2020</time>
+<time datetime=2020-3-25>Mar 25, 2020</time><br>
+<i data-feather=edit-2></i>
+Tim Besard
+
 
     <br><br>
     
 <!-- Content appended here -->
 
 
-<p>This release of the Julia CUDA stack contains some exciting new features: automatic installation of CUDA using artifacts, full support for GPU method redefinitions, and experimental support for multitasking and multithreading. The release is technically breaking, but most end-users should not be affected.</p>
+<p><p>This release of the Julia CUDA stack contains some exciting new features: automatic installation of CUDA using artifacts, full support for GPU method redefinitions, and experimental support for multitasking and multithreading. The release is technically breaking, but most end-users should not be affected.</p>
+</p>
 <h2 id="api_changes"><a href="#api_changes" class="header-anchor">API changes</a></h2>
 <p>Changes to certain APIs require these releases to be breaking, however, most users should not be affected and chances are you can just bump your Compat entries without any additional changes. Flux.jl users will have to wait a little longer though, as the package uses non-public APIs that have changed and <a href="https://github.com/FluxML/Flux.jl/pull/1050">requires an update</a>.</p>
 <h2 id="artifacts"><a href="#artifacts" class="header-anchor">Artifacts</a></h2>

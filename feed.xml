@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title><![CDATA[JuliaGPU]]></title>
+  <description><![CDATA[High-performance GPU programming in a high-level language.
+]]></description>
+  <link>https://juliagpu.org/</link>
+  <atom:link href="https://juliagpu.org/feed.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title><![CDATA[Paper: Flexible Performant GEMM Kernels on GPUs]]></title>
+    <link>https://juliagpu.org/post/2020-09-28-gemmkernels/</link>
+    <description><![CDATA[General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.
+<br><a href="https://juliagpu.org/post/2020-09-28-gemmkernels/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2020-09-28-gemmkernels/</guid>
+    <pubDate>Mon, 8 Mar 2021 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[New website for JuliaGPU]]></title>
+    <link>https://juliagpu.org/post/2019-12-12-new_site/</link>
+    <description><![CDATA[Welcome to the new landing page for the JuliaGPU organization. This website serves as an introduction to the several packages for programming GPUs in Julia, with pointers to relevant resources for new users.
+<br><a href="https://juliagpu.org/post/2019-12-12-new_site/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2019-12-12-new_site/</guid>
+    <pubDate>Mon, 8 Mar 2021 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[CUDA.jl 1.1]]></title>
+    <link>https://juliagpu.org/post/2020-07-07-cuda_1.1/</link>
+    <description><![CDATA[CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.
+<br><a href="https://juliagpu.org/post/2020-07-07-cuda_1.1/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2020-07-07-cuda_1.1/</guid>
+    <pubDate>Mon, 8 Mar 2021 00:00:00 UT</pubDate>
+  </item>
+</channel>
+</rss>

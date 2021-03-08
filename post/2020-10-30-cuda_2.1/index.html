@@ -142,13 +142,17 @@ li p {
     
     <h1>CUDA.jl 2.1</h1>
     <i data-feather=calendar></i>
-<time datetime=2020-10-30>Oct 30, 2020</time>
+<time datetime=2020-10-30>Oct 30, 2020</time><br>
+<i data-feather=edit-2></i>
+Tim Besard
+
 
     <br><br>
     
 <!-- Content appended here -->
 
-<p>CUDA.jl v2.1 is a bug-fix release, with one new feature: support for cubic texture interpolations. The release also partly reverts a change from v2.0: <code>reshape</code>, <code>reinterpret</code> and contiguous <code>view</code>s now return a <code>CuArray</code> again.</p>
+<p><p>CUDA.jl v2.1 is a bug-fix release, with one new feature: support for cubic texture interpolations. The release also partly reverts a change from v2.0: <code>reshape</code>, <code>reinterpret</code> and contiguous <code>view</code>s now return a <code>CuArray</code> again.</p>
+</p>
 <h2 id="generalized_texture_interpolations"><a href="#generalized_texture_interpolations" class="header-anchor">Generalized texture interpolations</a></h2>
 <p>CUDA&#39;s texture hardware only supports nearest-neighbour and linear interpolation, for other modes one is required to perform the interpolation by hand. In CUDA.jl v2.1 we are generalizing the texture interpolation API so that it is possible to use both hardware-backed and software-implemented interpolation modes in exactly the same way:</p>
 <pre><code class="language-julia"># N is the dimensionality &#40;1, 2 or 3&#41;

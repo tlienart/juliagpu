@@ -30,9 +30,18 @@ end
 function hfun_post_date()
     fname = blogpost_name(locvar(:fd_rpath)::String)
     y, m, d = getdate(fname)
+    author = locvar(:author)
+    author_line = ""
+    if !isnothing(author)
+        author_line = """
+            <i data-feather=edit-2></i>
+            $author
+            """
+    end
     return """
            <i data-feather=calendar></i>
-           <time datetime=$y-$m-$d>$(MONTH[m]) $d, $y</time>
+           <time datetime=$y-$m-$d>$(MONTH[m]) $d, $y</time><br>
+           $author_line
            """
 end
 
@@ -44,7 +53,7 @@ function blogpost_entry_html(link, title, y, m, d; ext=false)
           </a>$(ifelse(ext, "<span>&nbsp;&#8599;</span>", ""))
           <br>
           <i data-feather=calendar></i>
-          <time datetime=$y-$m-$d>$(MONTH[m]) $d, $y</time>
+          <time datetime=$y-$m-$d>$(MONTH[m]) $d, $y</time><br>
         </p>
         """
 end
@@ -90,4 +99,10 @@ function hfun_img(params)
           <img src="$(path)$img" alt="$cap">
         </figure>
         """
+end
+
+
+function hfun_abstract()
+    descr = fd2html(locvar(:abstract)::String, internal=true)
+    return "<p>$descr</p>"
 end
