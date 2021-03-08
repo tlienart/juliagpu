@@ -1,13 +1,15 @@
 +++
 title = "CUDA.jl 1.1"
 author = "Tim Besard"
+abstract = """
+    CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It
+    raises the minimal Julia version to 1.4, and comes with support for the impending 1.5
+    release.
+    """
+rss = abstract
 +++
 
-CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It
-raises the minimal Julia version to 1.4, and comes with support for the impending 1.5
-release.
-
-<!--more-->
+{{abstract}}
 
 
 ## CUDA.jl replacing CuArrays/CUDAnative.jl

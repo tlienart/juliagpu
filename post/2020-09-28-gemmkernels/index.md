@@ -1,15 +1,18 @@
 +++
 title = "Paper: Flexible Performant GEMM Kernels on GPUs"
 author = "Thomas Faingnaert, Tim Besard, Bjorn De Sutter"
+abstract = """
+    General Matrix Multiplication or GEMM kernels take center place in high performance
+    computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as
+    NVIDIA's Tensor Cores. In this paper we show how it is possible to program these
+    accelerators from Julia, and present abstractions and interfaces that allow to do so
+    efficiently without sacrificing performance.
+    """
+rss = abstract
 +++
 
-General Matrix Multiplication or GEMM kernels take center place in high performance
-computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as
-NVIDIA's Tensor Cores. In this paper we show how it is possible to program these
-accelerators from Julia, and present abstractions and interfaces that allow to do so
-efficiently without sacrificing performance.
+{{abstract}}
 
-<!--more-->
 
 A pre-print of the paper has been published on arXiv:
 [arXiv:2009.12263](https://arxiv.org/abs/2009.12263). <br> The source code can be found on

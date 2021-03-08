@@ -2,14 +2,14 @@
 title = "CUDA.jl 3.0"
 author = "Tim Besard"
 hidden = true
+abstract = """
+    CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved
+    multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a
+    completely revamped cuDNN interface.
+    """
 +++
 
-CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved
-multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a
-completely revamped cuDNN interface.
-
-<!--more-->
-
+{{abstract}}
 
 ## Improved multi-tasking and multi-threading
 

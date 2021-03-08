@@ -1,14 +1,17 @@
 +++
 title = "CUDAnative.jl 3.0 and CuArrays.jl 2.0"
 author = "Tim Besard"
+abstract = """
+    This release of the Julia CUDA stack contains some exciting new features: automatic
+    installation of CUDA using artifacts, full support for GPU method redefinitions, and
+    experimental support for multitasking and multithreading. The release is technically
+    breaking, but most end-users should not be affected.
+    """
 +++
 
 {{redirect /cudanative_3.0-cuarrays_2.0/}}
 
-This release of the Julia CUDA stack contains some exciting new features: automatic
-installation of CUDA using artifacts, full support for GPU method redefinitions, and
-experimental support for multitasking and multithreading. The release is technically
-breaking, but most end-users should not be affected.
+{{abstract}}
 
 <!--more-->
 

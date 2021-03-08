@@ -51,3 +51,11 @@ external_entries = [
 # Blog
 
 {{blogposts}}
+
+\\
+
+~~~
+<p align=center>
+  <a href=/feed.xml><i data-feather=rss></i></a>
+<p>
+~~~
