@@ -6,67 +6,6 @@
   <link>https://juliagpu.org/</link>
   <atom:link href="https://juliagpu.org/feed.xml" rel="self" type="application/rss+xml" />
   <item>
-    <title><![CDATA[CUDA.jl 3.0]]></title>
-    <link>https://juliagpu.org/post/2021-03-01-cuda_3.0/</link>
-    <description><![CDATA[CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a completely revamped cuDNN interface.
-<br><a href="https://juliagpu.org/post/2021-03-01-cuda_3.0/">Read more</a>]]></description>
-    <content:encoded>
-
-<h2 id="improved_multi-tasking_and_multi-threading__2"><a href="#improved_multi-tasking_and_multi-threading__2" class="header-anchor">Improved multi-tasking and multi-threading</a></h2>
-<p>Traditionally, CUDA operations were enqueued on the global default stream, and many of these operations &#40;like copying memory, or synchronizing execution&#41; were fully blocking. This posed difficulties when using multiple tasks, each of which assumed to perform independent operations &#40;possibly on different devices, maybe even from a different CPU thread&#41;. <strong>CUDA.jl now uses a private stream for each Julia task, and avoids blocking operations where possible, enabling task-based concurrent execution.</strong></p>
-<p>A ~~picture~~ snippet of code is worth a thousand words, so let&#39;s have a look at some dummy computation that both uses a library function &#40;GEMM from CUBLAS&#41; and a native Julia broadcast kernel:</p>
-<pre><code class="language-julia">using CUDA, LinearAlgebra
-
-function compute&#40;a,b,c&#41;
-    mul&#33;&#40;c, a, b&#41;
-    broadcast&#33;&#40;sin, c, c&#41;
-    synchronize&#40;&#41;
-    c
-end</code></pre>
-<p>To perform this computation concurrently, we can just use Julia&#39;s task-based programming interfaces and wrap each computation in an <code>@async</code> block. To synchronize these tasks at the end, we wrap in a <code>@sync</code> block. Finally, to visualize these computations in the profiler trace below we use NVTX&#39;s <code>@range</code> macro:</p>
-<pre><code class="language-julia">function iteration&#40;a,b,c&#41;
-    results &#61; Vector&#123;Any&#125;&#40;undef, 2&#41;
-    NVTX.@range &quot;computation&quot; @sync begin
-        @async begin
-            results&#91;1&#93; &#61; compute&#40;a,b,c&#41;
-        end
-        @async begin
-            results&#91;2&#93; &#61; compute&#40;a,b,c&#41;
-        end
-    end
-    NVTX.@range &quot;comparison&quot; Array&#40;results&#91;1&#93;&#41; &#61;&#61; Array&#40;results&#91;2&#93;&#41;
-end</code></pre>
-<p>We then invoke this function using some random data:</p>
-<pre><code class="language-julia">function main&#40;N&#61;1024&#41;
-    a &#61; CUDA.rand&#40;N,N&#41;
-    b &#61; CUDA.rand&#40;N,N&#41;
-    c &#61; CUDA.rand&#40;N,N&#41;
-
-    # make sure this data can be used by other tasks&#33;
-    synchronize&#40;&#41;
-
-    # warm-up
-    iteration&#40;a,b,c&#41;
-    GC.gc&#40;true&#41;
-
-    NVTX.@range &quot;main&quot; iteration&#40;a,b,c&#41;
-end</code></pre>
-<p>The snippet above illustrates one breaking aspect of this change: Because each task uses its own stream, <strong>you now need to synchronize when re-using data in another task.</strong> Although it is unlikely that any user code was relying on the old behavior, it is technically a breaking change.</p>
-<p>If we profile these computations, we can see how the execution was overlapped:</p>
-
-<p>The region highlighted in green was spent enqueueing operations, which includes the call to <code>synchronize&#40;&#41;</code>. This used to be a globally-synchronizing operation, whereas now it only synchronizes the task-local stream while yielding to the Julia scheduler so that it can continue executing other tasks. <strong>For synchronizing the entire device, use the new <code>synchronize_all&#40;&#41;</code> function.</strong></p>
-<p>The remainder of computation was then spent executing kernels. Here, these executions were overlapping, but that obviously depends on the exact characteristics of the computations and your GPU. The same approach however can be used for multi-GPU programming, where each task targets a different device. It is also possible to use different threads for each task.</p>
-<p>Note that not all operations have been made fully asynchronous yet. For example, copying memory to or from the GPU will currently still synchronize execution, and thus inhibit switching to another task. That is why the example above only called <code>synchronize&#40;&#41;</code> in the compute task, and copied the memory to the host in the parent task.</p>
-<h2 id="cuda_112_and_stream-ordered_allocations__2"><a href="#cuda_112_and_stream-ordered_allocations__2" class="header-anchor">CUDA 11.2 and stream-ordered allocations</a></h2>
-<p>CUDA.jl now also fully supports CUDA 11.2, and it will default to using that version of the toolkit if your driver supports it. The release came with several new features, such as <a href="https://developer.nvidia.com/blog/enhancing-memory-allocation-with-new-cuda-11-2-features/">the new stream-ordered memory allocator</a>. Without going into details, it is now possible to asynchonously allocate memory, obviating much of the need to cache those allocations in a memory pool. Initial benchmarks have shown nice speed-ups from using this allocator, while lowering memory pressure and thus reducing invocations of the Julia garbage collector.</p>
-<p>When using CUDA 11.2, CUDA.jl will default to the CUDA-backed memory pool, and disable its own caching layer. If you want to compare performance, you can still use the old allocator and caching memory pool by setting the <code>JULIA_CUDA_MEMORY_POOL</code> environment variable to, e.g. <code>binned</code>. On older versions of CUDA, the <code>binned</code> pool is still used by default.</p>
-<h2 id="revamped_cudnn_interface__2"><a href="#revamped_cudnn_interface__2" class="header-anchor">Revamped cuDNN interface</a></h2>
-<p>As part of this release, the cuDNN wrappers have been completely revamped by <a href="https://github.com/denizyuret">@denizyuret</a>. The goal of the redesign is to more faithfully map the cuDNN API to more natural Julia functions, so that packages like Knet.jl or NNlib.jl can more easily use advanced cuDNN features without having to resort to low-level C calls. For more details, refer to <a href="https://github.com/JuliaGPU/CUDA.jl/blob/da7c6eee82d6ea0eee1cb75c8589c8a92b0bc474/lib/cudnn/README.md">the design document</a>.</p>
-</content:encoded>
-    <guid>https://juliagpu.org/post/2021-03-01-cuda_3.0/</guid>
-    <pubDate>Mon, 1 Mar 2021 00:00:00 UT</pubDate>
-  </item>
-  <item>
     <title><![CDATA[CUDA.jl 2.4 and 2.5]]></title>
     <link>https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/</link>
     <description><![CDATA[CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved <code>findmin</code> and <code>findmax</code> kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.
