@@ -6,20 +6,52 @@
   <link>https://juliagpu.org/</link>
   <atom:link href="https://juliagpu.org/feed.xml" rel="self" type="application/rss+xml" />
   <item>
+    <title><![CDATA[CUDA.jl 3.0]]></title>
+    <link>https://juliagpu.org/post/2021-03-01-cuda_3.0/</link>
+    <description><![CDATA[CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a completely revamped cuDNN interface.
+<br><a href="https://juliagpu.org/post/2021-03-01-cuda_3.0/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2021-03-01-cuda_3.0/</guid>
+    <pubDate>Mon, 1 Mar 2021 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[CUDA.jl 2.4 and 2.5]]></title>
+    <link>https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/</link>
+    <description><![CDATA[CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved <code>findmin</code> and <code>findmax</code> kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.
+<br><a href="https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2021-01-08-cuda_2.4_2.5/</guid>
+    <pubDate>Fri, 8 Jan 2021 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[CUDA.jl 2.1]]></title>
+    <link>https://juliagpu.org/post/2020-10-30-cuda_2.1/</link>
+    <description><![CDATA[CUDA.jl v2.1 is a bug-fix release, with one new feature: support for cubic texture interpolations. The release also partly reverts a change from v2.0: <code>reshape</code>, <code>reinterpret</code> and contiguous <code>view</code>s now return a <code>CuArray</code> again.
+<br><a href="https://juliagpu.org/post/2020-10-30-cuda_2.1/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2020-10-30-cuda_2.1/</guid>
+    <pubDate>Fri, 30 Oct 2020 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[CUDA.jl 2.0]]></title>
+    <link>https://juliagpu.org/post/2020-10-02-cuda_2.0/</link>
+    <description><![CDATA[Today we&#39;re releasing CUDA.jl 2.0, a breaking release with several new features. Highlights include initial support for Float16, a switch to CUDA&#39;s new stream model, a much-needed rework of the sparse array support and support for CUDA 11.1.
+<br><a href="https://juliagpu.org/post/2020-10-02-cuda_2.0/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2020-10-02-cuda_2.0/</guid>
+    <pubDate>Fri, 2 Oct 2020 00:00:00 UT</pubDate>
+  </item>
+  <item>
     <title><![CDATA[Paper: Flexible Performant GEMM Kernels on GPUs]]></title>
     <link>https://juliagpu.org/post/2020-09-28-gemmkernels/</link>
     <description><![CDATA[General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.
 <br><a href="https://juliagpu.org/post/2020-09-28-gemmkernels/">Read more</a>]]></description>
     <guid>https://juliagpu.org/post/2020-09-28-gemmkernels/</guid>
-    <pubDate>Mon, 8 Mar 2021 00:00:00 UT</pubDate>
+    <pubDate>Mon, 28 Sep 2020 00:00:00 UT</pubDate>
   </item>
   <item>
-    <title><![CDATA[New website for JuliaGPU]]></title>
-    <link>https://juliagpu.org/post/2019-12-12-new_site/</link>
-    <description><![CDATA[Welcome to the new landing page for the JuliaGPU organization. This website serves as an introduction to the several packages for programming GPUs in Julia, with pointers to relevant resources for new users.
-<br><a href="https://juliagpu.org/post/2019-12-12-new_site/">Read more</a>]]></description>
-    <guid>https://juliagpu.org/post/2019-12-12-new_site/</guid>
-    <pubDate>Mon, 8 Mar 2021 00:00:00 UT</pubDate>
+    <title><![CDATA[CUDA.jl 1.3 - Multi-device programming]]></title>
+    <link>https://juliagpu.org/post/2020-07-18-CUDA_1.3/</link>
+    <description><![CDATA[Today we&#39;re releasing CUDA.jl 1.3, with several new features. The most prominent change is support for multiple GPUs within a single process.
+<br><a href="https://juliagpu.org/post/2020-07-18-CUDA_1.3/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2020-07-18-CUDA_1.3/</guid>
+    <pubDate>Sat, 18 Jul 2020 00:00:00 UT</pubDate>
   </item>
   <item>
     <title><![CDATA[CUDA.jl 1.1]]></title>
@@ -27,7 +59,23 @@
     <description><![CDATA[CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.
 <br><a href="https://juliagpu.org/post/2020-07-07-cuda_1.1/">Read more</a>]]></description>
     <guid>https://juliagpu.org/post/2020-07-07-cuda_1.1/</guid>
-    <pubDate>Mon, 8 Mar 2021 00:00:00 UT</pubDate>
+    <pubDate>Tue, 7 Jul 2020 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[CUDAnative.jl 3.0 and CuArrays.jl 2.0]]></title>
+    <link>https://juliagpu.org/post/2020-03-25-cudanative_3.0-cuarrays_2.0/</link>
+    <description><![CDATA[This release of the Julia CUDA stack contains some exciting new features: automatic installation of CUDA using artifacts, full support for GPU method redefinitions, and experimental support for multitasking and multithreading. The release is technically breaking, but most end-users should not be affected.
+<br><a href="https://juliagpu.org/post/2020-03-25-cudanative_3.0-cuarrays_2.0/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2020-03-25-cudanative_3.0-cuarrays_2.0/</guid>
+    <pubDate>Wed, 25 Mar 2020 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[New website for JuliaGPU]]></title>
+    <link>https://juliagpu.org/post/2019-12-12-new_site/</link>
+    <description><![CDATA[Welcome to the new landing page for the JuliaGPU organization. This website serves as an introduction to the several packages for programming GPUs in Julia, with pointers to relevant resources for new users.
+<br><a href="https://juliagpu.org/post/2019-12-12-new_site/">Read more</a>]]></description>
+    <guid>https://juliagpu.org/post/2019-12-12-new_site/</guid>
+    <pubDate>Thu, 12 Dec 2019 00:00:00 UT</pubDate>
   </item>
 </channel>
 </rss>
