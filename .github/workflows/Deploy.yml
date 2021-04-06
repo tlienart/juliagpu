@@ -19,6 +19,7 @@ jobs:
     - name: Install dependencies listed in Project.toml and build package
       uses: julia-actions/julia-buildpkg@master
     - run: julia --project -e '
+            using Pkg; Pkg.develop([PackageSpec(name="Franklin", rev="rssfix"), PackageSpec(name="FranklinTemplates", rev="rssfix")]);
             using Franklin;
             optimize(minify=false, prerender=false);'
     - name: Build and Deploy
