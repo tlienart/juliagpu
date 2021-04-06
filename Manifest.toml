@@ -50,7 +50,7 @@ version = "0.10.34"
 
 [[FranklinTemplates]]
 deps = ["LiveServer"]
-git-tree-sha1 = "d18f22567cf6db7d09dbae0b4e6bd5e7cf875c7a"
+git-tree-sha1 = "f3f97688895c0336248e0c8067c4fd257bb6e685"
 repo-rev = "rssfix"
 repo-url = "https://github.com/tlienart/FranklinTemplates.jl.git"
 uuid = "3a985190-f512-4703-8d38-2a7944ed5916"
