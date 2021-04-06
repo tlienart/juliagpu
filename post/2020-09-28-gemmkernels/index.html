@@ -152,8 +152,7 @@ Thomas Faingnaert, Tim Besard, Bjorn De Sutter
     
 <!-- Content appended here -->
 
-<p><p>General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.</p>
-</p>
+<p>General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.</p>
 <p>A pre-print of the paper has been published on arXiv: <a href="https://arxiv.org/abs/2009.12263">arXiv:2009.12263</a>. &lt;br&gt; The source code can be found on GitHub: <a href="https://github.com/thomasfaingnaert/GemmKernels.jl">thomasfaingnaert/GemmKernels.jl</a>.</p>
 <p>With the APIs from GemmKernels.jl, it is possible to instantiate GEMM kernels that perform in the same ball park as, and sometimes even outperform state-of-the-art libraries like CUBLAS and CUTLASS. For example, performing a mixed-precision multiplication of two 16-bit matrixes into a 32-bit accumulator &#40;on different combinations of layouts&#41;:</p>
 <figure>

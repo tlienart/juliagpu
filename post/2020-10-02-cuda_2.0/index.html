@@ -152,8 +152,7 @@ Tim Besard
     
 <!-- Content appended here -->
 
-<p><p>Today we&#39;re releasing CUDA.jl 2.0, a breaking release with several new features. Highlights include initial support for Float16, a switch to CUDA&#39;s new stream model, a much-needed rework of the sparse array support and support for CUDA 11.1.</p>
-</p>
+<p>Today we&#39;re releasing CUDA.jl 2.0, a breaking release with several new features. Highlights include initial support for Float16, a switch to CUDA&#39;s new stream model, a much-needed rework of the sparse array support and support for CUDA 11.1.</p>
 <p>The release now requires <strong>Julia 1.5</strong>, and assumes a GPU with <strong>compute capability 5.0</strong> or higher &#40;although most of the package will still work with an older GPU&#41;.</p>
 <h2 id="low-_and_mixed-precision_operations"><a href="#low-_and_mixed-precision_operations" class="header-anchor">Low- and mixed-precision operations</a></h2>
 <p>With NVIDIA&#39;s latest GPUs featuring more and more low-precision operations, CUDA.jl <a href="https://github.com/JuliaGPU/CUDA.jl/pull/417">now</a> starts to support these data types. For example, the CUBLAS wrappers can be used with &#40;B&#41;Float16 inputs &#40;running under <code>JULIA_DEBUG&#61;CUBLAS</code> to illustrate the called methods&#41; thanks to the <code>cublasGemmEx</code> API call:</p>
