@@ -109,6 +109,9 @@ function hfun_abstract()
 end
 
 function hfun_postredirect()
-    path = replace(locvar(:fd_url)::String, "/post/" => "/")
+    fd_url = locvar(:fd_url)::String
+    path = replace(fd_url, "/post/" => "/")
+    d = Date(match(r"(20\d\d-\d\d-\d\d)", fd_url).captures[1])
+    Franklin.set_var!(Franklin.LOCAL_VARS, "rss_pubdate", d)
     return Franklin.hfun_redirect([path])
 end
