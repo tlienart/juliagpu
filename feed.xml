@@ -30,8 +30,8 @@
   <description>
     <![CDATA[  CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a completely revamped cuDNN interface.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>CUDA.jl 3.0 is a significant, semi-breaking release that features greatly improved multi-tasking and multi-threading, support for CUDA 11.2 and its new memory allocator, and a completely revamped cuDNN interface.</p>
 <h2 id="improved_multi-tasking_and_multi-threading">Improved multi-tasking and multi-threading</h2>
@@ -80,9 +80,13 @@ end</code></pre>
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -94,8 +98,8 @@ end</code></pre>
   <description>
     <![CDATA[  CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved &lt;code&gt;findmin&lt;/code&gt; and &lt;code&gt;findmax&lt;/code&gt; kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>CUDA.jl v2.4 and v2.5 are two almost-identical feature releases, respectively for Julia 1.5 and 1.6. These releases feature a greatly improved <code>findmin</code> and <code>findmax</code> kernels, an improved interface for kernel introspection, support for CUDA 11.2, and of course many bug fixes.</p>
 <h2 id="improved_findmin_and_findmax_kernels">Improved <code>findmin</code> and <code>findmax</code> kernels</h2>
@@ -121,9 +125,13 @@ NVIDIA driver 460.27.4</code></pre>
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -135,8 +143,8 @@ NVIDIA driver 460.27.4</code></pre>
   <description>
     <![CDATA[  CUDA.jl v2.1 is a bug-fix release, with one new feature: support for cubic texture interpolations. The release also partly reverts a change from v2.0: &lt;code&gt;reshape&lt;/code&gt;, &lt;code&gt;reinterpret&lt;/code&gt; and contiguous &lt;code&gt;view&lt;/code&gt;s now return a &lt;code&gt;CuArray&lt;/code&gt; again.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>CUDA.jl v2.1 is a bug-fix release, with one new feature: support for cubic texture interpolations. The release also partly reverts a change from v2.0: <code>reshape</code>, <code>reinterpret</code> and contiguous <code>view</code>s now return a <code>CuArray</code> again.</p>
 <h2 id="generalized_texture_interpolations">Generalized texture interpolations</h2>
@@ -162,9 +170,13 @@ dst &#61; Array&#40;gpu_dst&#41;</code></pre>
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -176,8 +188,8 @@ dst &#61; Array&#40;gpu_dst&#41;</code></pre>
   <description>
     <![CDATA[  Today we&#39;re releasing CUDA.jl 2.0, a breaking release with several new features. Highlights include initial support for Float16, a switch to CUDA&#39;s new stream model, a much-needed rework of the sparse array support and support for CUDA 11.1.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>Today we&#39;re releasing CUDA.jl 2.0, a breaking release with several new features. Highlights include initial support for Float16, a switch to CUDA&#39;s new stream model, a much-needed rework of the sparse array support and support for CUDA 11.1.</p>
 <p>The release now requires <strong>Julia 1.5</strong>, and assumes a GPU with <strong>compute capability 5.0</strong> or higher &#40;although most of the package will still work with an older GPU&#41;.</p>
@@ -289,9 +301,13 @@ CUDA toolkit 11.1.0, artifact installationLibraries:
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -303,8 +319,8 @@ CUDA toolkit 11.1.0, artifact installationLibraries:
   <description>
     <![CDATA[  General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>General Matrix Multiplication or GEMM kernels take center place in high performance computing and machine learning. Recent NVIDIA GPUs include GEMM accelerators, such as NVIDIA&#39;s Tensor Cores. In this paper we show how it is possible to program these accelerators from Julia, and present abstractions and interfaces that allow to do so efficiently without sacrificing performance.</p>
 <p>A pre-print of the paper has been published on arXiv: <a href="https://arxiv.org/abs/2009.12263">arXiv:2009.12263</a>. &lt;br&gt; The source code can be found on GitHub: <a href="https://github.com/thomasfaingnaert/GemmKernels.jl">thomasfaingnaert/GemmKernels.jl</a>.</p>
@@ -326,9 +342,13 @@ d &#61; similar&#40;c&#41;conf &#61; GemmKernels.get_config&#40;
  ]]>
   </content:encoded>
     
-  <author> Thomas Faingnaert, Tim Besard, Bjorn De Sutter </author>
-          
-  <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Thomas Faingnaert, Tim Besard, Bjorn De Sutter</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -340,8 +360,8 @@ d &#61; similar&#40;c&#41;conf &#61; GemmKernels.get_config&#40;
   <description>
     <![CDATA[  Today we&#39;re releasing CUDA.jl 1.3, with several new features. The most prominent change is support for multiple GPUs within a single process.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>Today we&#39;re releasing CUDA.jl 1.3, with several new features. The most prominent change is support for multiple GPUs within a single process.</p>
 <h2 id="multi-gpu_programming">Multi-GPU programming</h2>
@@ -409,9 +429,13 @@ CuDevice&#40;0&#41;: Tesla V100-PCIE-32GB</code></pre>
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -423,8 +447,8 @@ CuDevice&#40;0&#41;: Tesla V100-PCIE-32GB</code></pre>
   <description>
     <![CDATA[  CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  
 <p>CUDA.jl 1.1 marks the first feature release after merging several CUDA packages into one. It raises the minimal Julia version to 1.4, and comes with support for the impending 1.5 release.</p>
 <h2 id="cudajl_replacing_cuarrayscudanativejl">CUDA.jl replacing CuArrays/CUDAnative.jl</h2>
@@ -509,9 +533,13 @@ NVIDIA driver 450.36.6Libraries:
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -523,8 +551,8 @@ NVIDIA driver 450.36.6Libraries:
   <description>
     <![CDATA[  This release of the Julia CUDA stack contains some exciting new features: automatic installation of CUDA using artifacts, full support for GPU method redefinitions, and experimental support for multitasking and multithreading. The release is technically breaking, but most end-users should not be affected.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  <p>This release of the Julia CUDA stack contains some exciting new features: automatic installation of CUDA using artifacts, full support for GPU method redefinitions, and experimental support for multitasking and multithreading. The release is technically breaking, but most end-users should not be affected.</p>
 <h2 id="api_changes">API changes</h2>
 <p>Changes to certain APIs require these releases to be breaking, however, most users should not be affected and chances are you can just bump your Compat entries without any additional changes. Flux.jl users will have to wait a little longer though, as the package uses non-public APIs that have changed and <a href="https://github.com/FluxML/Flux.jl/pull/1050">requires an update</a>.</p>
@@ -574,9 +602,13 @@ end</code></pre>
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 
 <item>
@@ -588,15 +620,19 @@ end</code></pre>
   <description>
     <![CDATA[  Welcome to the new landing page for the JuliaGPU organization. This website serves as an introduction to the several packages for programming GPUs in Julia, with pointers to relevant resources for new users.  ]]>
   </description>  
+  
   <content:encoded>
-    
     <![CDATA[  <p>Welcome to the new landing page for the JuliaGPU organization. This website serves as an introduction to the several packages for programming GPUs in Julia, with pointers to relevant resources for new users.</p>
 <p>The sources for this website are hosted at <a href="https://github.com/JuliaGPU/juliagpu.org">GitHub</a> and generated using Hugo, feel free to open an issue or pull request if you think it could be improved.</p>
  ]]>
   </content:encoded>
     
-  <author> Tim Besard </author>
-          
-  <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Tim Besard</atom:name>
+  </atom:author>
+        
 </item>
 </channel></rss>
